@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { useForm } from "react-hook-form"
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext, useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Auth(){
@@ -10,7 +10,8 @@ export default function Auth(){
     const navigate = useNavigate();
 
     const {register, handleSubmit, formState : {errors} } = useForm();
-    const {signup, user, logout, login} = useContext(AuthContext);
+    // const {signup, login} = useContext(AuthContext);
+    const {signup, login} = useAuth(); //custom hooks
     
 
     function onSubmit(data){

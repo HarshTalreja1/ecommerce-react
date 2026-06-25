@@ -78,5 +78,5 @@ export function getProducts() {
 }
 
 export function getProductById(id) {
-  return products.find((p) => p.id === Number(id));
+  return products.find((p) => p.id === Number(id)); //url params are string so converted to number for comparison.
 }
